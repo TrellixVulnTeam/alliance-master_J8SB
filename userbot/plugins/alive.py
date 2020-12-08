@@ -33,7 +33,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Catuserbot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>"
+        cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>BadCat</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             CAT_IMG,
@@ -54,7 +54,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} Catuserbot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>",
+            "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>BadCat</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>",
             parse_mode="html",
         )
 
@@ -82,8 +82,6 @@ async def amireallyalive(alive):
 # the "you can't use this for anything - public or private,
 # unless you know the two prime factors to the number below" license
 # 543935563961418342898620676239017231876605452284544942043082635399903451854594062955
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ
-# ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
 # uniborg
 
 
