@@ -7,8 +7,8 @@ from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import CMD_HELP, StartTime, catdef, catversion, hmention, mention, reply_id
 
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESFULLY ✮"
-EMOJI = Config.CUSTOM_ALIVE_EMOJI or "✧✧"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 Bot System Load [ONLINE] 🧸"
+EMOJI = Config.CUSTOM_ALIVE_EMOJI or "-> "
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -66,7 +66,7 @@ async def amireallyalive(alive):
         return
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     reply_to_id = await reply_id(alive)
-    cat_caption = f"**Status Userbot is Up and Running**\n"
+    cat_caption = f"**Status [ONLINE]**\n"
     cat_caption += f"**  -Master :** {mention}\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
