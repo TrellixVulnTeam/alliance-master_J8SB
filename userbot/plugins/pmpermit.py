@@ -21,7 +21,7 @@ PREV_REPLY_MESSAGE = {}
 CACHE = {}
 PMPERMIT_PIC = Config.PMPERMIT_PIC
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
-USER_BOT_WARN_ZERO = "You were spamming my peru master's inbox, henceforth you are blocked by my master's userbot. **Now GTFO, i'm playing minecraft** "
+USER_BOT_WARN_ZERO = "`⚠️ PESAN MU AKAN DI FILTER OLEH @okinio MOHON SABAR SEBENTAR`\n`⛔️ SPAMMING = BLOCK.`\n\n **Now GTFO, i'm playing wildrift** "
 
 
 if Config.PRIVATE_GROUP_ID is not None:
