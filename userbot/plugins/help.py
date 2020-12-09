@@ -63,7 +63,7 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Userbot Helper. Provided by {mention} to reveal all the plugins\
+            help_string = f"Menu Help. Hubungi {mention} untuk menggunakan semua fiture\
                           \nCheck `.help plugin name` for commands, in case popup doesn't appear.\
                           \nCheck `.info plugin name` for usage of thoose plugins and commands"
             tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
