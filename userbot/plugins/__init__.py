@@ -174,8 +174,8 @@ async def catalive():
     except Exception as e:
         dyno = e
     return f"🧸 System Sudah Ready Shifu 🧸 \
-                 \n\nღ Database : {check_sgnirts}\
-                  \nღ Sudo : {sudo}\
-                  \nღ Uptime : {uptime}\
-                  \nღ Dyno : {dyno}\
+                 \n\n• Database : {check_sgnirts}\
+                  \n• Sudo : {sudo}\
+                  \n• Uptime : {uptime}\
+                  \n• Dyno : {dyno}\
                   "
