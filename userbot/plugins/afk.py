@@ -52,7 +52,7 @@ async def set_not_afk(event):
     if "afk" not in current_message and "on" in USERAFK_ON:
         shite = await event.client.send_message(
             event.chat_id,
-            "`Back alive! No Longer afk.\nWas afk for " + endtime + "`",
+            "`Aku kembali! \nTadi Afk selama " + endtime + "`",
         )
         USERAFK_ON = {}
         afk_time = None
