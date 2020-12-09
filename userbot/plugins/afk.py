@@ -52,7 +52,7 @@ async def set_not_afk(event):
     if "afk" not in current_message and "on" in USERAFK_ON:
         shite = await event.client.send_message(
             event.chat_id,
-            "`Aku kembali! \nTadi Afk selama " + endtime + "`",
+            "`Aku kembali! \nTadi " + endtime + "Afk`",
         )
         USERAFK_ON = {}
         afk_time = None
@@ -62,9 +62,9 @@ async def set_not_afk(event):
             await event.client.send_message(
                 BOTLOG_CHATID,
                 "#AFKFALSE \n`Set AFK mode to False\n"
-                + "Back alive! No Longer afk.\nWas afk for "
+                + "Aku Kembali! \nTadi "
                 + endtime
-                + "`",
+                + "Afk`",
             )
 
 
@@ -109,15 +109,15 @@ async def on_afk(event):
         msg = None
         if link and reason:
             message_to_reply = (
-                f"**I am AFK**\n\n**AFK Since :** `{endtime}`\n**Reason : **{reason}"
+                f"**AFK**\n\n**Dari :** `{endtime}`\n**{reason}**"
             )
         elif reason:
             message_to_reply = (
-                f"**I am AFK\n\nAFK Since :** `{endtime}`\n**Reason : **`{reason}`"
+                f"**AFK\n\nDari :** `{endtime}`\n`{reason}`"
             )
         else:
             message_to_reply = (
-                f"`I am AFK\n\nAFK Since :{endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                f"`AFK\n\nDari :{endtime}\nSedang AFK, Ada apa?`"
             )
         if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
             msg = await event.reply(message_to_reply)
@@ -170,9 +170,9 @@ async def _(event):
             afk_time = datetime.now()
         USERAFK_ON = f"on: {reason}"
         if reason:
-            await edit_delete(event, f"`I shall be Going afk! because ~` {reason}", 5)
+            await edit_delete(event, f"`Afk dulu! Karena ~` {reason}", 5)
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, f"`Afk dulu~! `", 5)
         if BOTLOG:
             if reason:
                 await event.client.send_message(
