@@ -15,7 +15,7 @@ async def _(event):
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
     await edit_or_reply(
         event,
-        "Restarted. `.ping` aku nanti untuk mengecek sudah online atau belum. Sabar, ini akan lama sekitar 1-2 menit saat melakukan restart",
+        "**Bot akan Restart.**\n Nanti .ping aku lagi ya sekitar 1-2 menit untuk mengecek sudah online atau belum. Harap sabar saat melakukan restart.",
     )
     await bot.disconnect()
     execl(sys.executable, sys.executable, *sys.argv)
