@@ -64,8 +64,8 @@ async def cmd_list(event):
     else:
         if HELPTYPE is True:
             help_string = f"Menu User. Hubungi {mention} untuk menggunakan fitur\
-                          \nCheck `.help <nama plugin>` untuk perintah.\
-                          \nCheck `.info <nama plugin>` untuk menggunakannya"
+                          \nCheck `.help nama plugin` untuk perintah.\
+                          \nCheck `.info nama plugin` untuk menggunakannya."
             tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
