@@ -106,6 +106,8 @@ def set_key(dictionary, key, value):
 # the "you can't use this for anything - public or private,
 # unless you know the two prime factors to the number below" license
 # 543935563961418342898620676239017231876605452284544942043082635399903451854594062955
+# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ
+# ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
 # uniborg
 
 
@@ -171,9 +173,9 @@ async def catalive():
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    return f"System Sudah Ready Shifu\
-                 \n\n• Database : {check_sgnirts}\
-                  \n• Sudo : {sudo}\
-                  \n• Uptime : {uptime}\
-                  \n• Dyno : {dyno}\
+    return f"🖤༄ Catuserbot Stats ༄🖤\
+                 \n\nღ Database : {check_sgnirts}\
+                  \nღ Sudo : {sudo}\
+                  \nღ Uptime : {uptime}\
+                  \nღ Dyno : {dyno}\
                   "
