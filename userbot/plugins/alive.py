@@ -7,7 +7,7 @@ from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import CMD_HELP, StartTime, catdef, catversion, hmention, mention, reply_id
 
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 Bot Ready [ONLINE] 🧸"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 Bot System Load [ONLINE] 🧸"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "->"
 
 
@@ -54,7 +54,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} Catuserbot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>BadCat</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>",
+            "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/Jisan09/catuserbot><b>BadCat</b></a> | <a href = https://t.me/catuserbot_support><b>Support</b></a>",
             parse_mode="html",
         )
 
