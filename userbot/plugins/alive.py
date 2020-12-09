@@ -7,7 +7,7 @@ from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import CMD_HELP, StartTime, catdef, catversion, hmention, mention, reply_id
 
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 Bot System Load [ONLINE] 🧸"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 UserBot [ONLINE] 🧸"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "-> "
 
 
@@ -66,7 +66,7 @@ async def amireallyalive(alive):
         return
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     reply_to_id = await reply_id(alive)
-    cat_caption = f"**Okiniobot Running Shifu**\n"
+    cat_caption = f"**Okiniobot Sudah Aktif Shifu**\n"
     cat_caption += f"**  -Master :** {mention}\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
     cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
