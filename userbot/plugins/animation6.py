@@ -107,21 +107,22 @@ async def _(event):
     animation_ttl = range(11)
     event = await edit_or_reply(event, "quickheal")
     animation_chars = [
-        "`Downloading File..`",
-        "`File Downloaded....`",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 100%\n█████████████████████████ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nTask: 01 of 01 Files Scanned...\n\nResult: No Virus Found...`",
+        "`Mendownload File..`",
+        "`File Berhasil diDownload....`",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 100%\n█████████████████████████ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nTugas: 01 dari 01 File Diperiksa...\n\nHasil: Tidak Ditemukan Virus...`",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 11])
+        await event.delete()
 
 
 @bot.on(admin_cmd(pattern=f"sqh$", outgoing=True))
@@ -133,21 +134,22 @@ async def _(event):
     animation_ttl = range(11)
     event = await edit_or_reply(event, "sqh")
     animation_chars = [
-        "`Downloading File..`",
-        "`File Downloaded....`",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 100%\n█████████████████████████ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nTask: 01 of 01 Files Scanned...\n\nResult: No Virus Found...`",
+        "`Mendownload File..`",
+        "`File Berhasil diDownload....`",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 100%\n█████████████████████████ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nTugas: 01 dari 01 File Diperiksa...\n\nHasil: Tidak Ditemukan Virus...`",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 11])
+        await event.delete()
 
 
 @bot.on(admin_cmd(pattern=f"vquickheal$", outgoing=True))
@@ -159,21 +161,22 @@ async def _(event):
     animation_ttl = range(11)
     event = await edit_or_reply(event, "vquickheal")
     animation_chars = [
-        "`Downloading File..`",
-        "`File Downloaded....`",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nFile Scanned... 100%\n█████████████████████████ `",
-        "`Quick Heal Total Security Checkup\n\n\nSubscription: Pru User\nValid Until: 31/12/2099\n\nTask: 01 of 01 Files Scanned...\n\nResult:⚠️Virus Found⚠️\nMore Info: Torzan, Spyware, Adware`",
+        "`Mendownload File..`",
+        "`File Berhasil diDownload....`",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 20%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 36%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 84%\n█████████████████████▒▒▒▒ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nFile Scanned... 100%\n█████████████████████████ `",
+        "`Pemeriksaan Kemanan Data\n\n\nBerlangganan: @okinio\nBerlaku Sampai: 22/12/2022\n\nTugas: 01 dari 01 File Diperiksa...\n\nHasil:⚠️Ditemukan Virus⚠️\nInfo Lebih Lanjut: Torzan, Spyware, Adware`",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 11])
+        await event.delete()
 
 
 @bot.on(admin_cmd(pattern=f"macos$", outgoing=True))
@@ -185,17 +188,17 @@ async def _(event):
     animation_ttl = range(11)
     event = await edit_or_reply(event, "macos")
     animation_chars = [
-        "`Connecting To Hackintosh...`",
-        "`Initiating Hackintosh Login.`",
-        "`Loading Hackintosh... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Loading Hackintosh... 3%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Loading Hackintosh... 9%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Loading Hackintosh... 23%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Loading Hackintosh... 39%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Loading Hackintosh... 69%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
-        "`Loading Hackintosh... 89%\n█████████████████████▒▒▒▒ `",
-        "`Loading Hackintosh... 100%\n█████████████████████████ `",
-        "`Welcome...\n\nStock OS: Symbian OS\nCurrent OS: Hackintosh`\n\n**My PC Specs:**\n\n **CPU:** __2.9GHz Intel Core i9-8950HK (hexa-core, 12MB cache, up to 4.8GHz)__\n\n**Graphics:** __Nvidia GeForce GTX 1080 OC (8GB GDDR5X)__\n\n**RAM:** __32GB DDR4 (2,666MHz)__\n\n**Screen:** __17.3-inch, QHD (2,560 x 1,440) 120Hz G-Sync__\n\n**Storage:** __512GB PCIe SSD, 1TB HDD (7,200 rpm)__\n\n**Ports:** __2 x USB 3.0, 1 x USB-C 3.0, 1 x USB-C (Thunderbolt 3), HDMI, mini DisplayPort, Ethernet, headphone jack, microphone jack__\n\n**Connectivity:** __Killer 1550 802.11ac Wi-Fi, Bluetooth 5.0__\n\n**Camera:** __Alienware FHD camera, Tobii IR Eye-tracking with Windows Hello__\n\n**Size:** __16.7 x 13.1 x 1.18 inches (42.4 x 33.2 x 2.99cm; W x D x H)__",
+        "`Connecting To Macintosh...`",
+        "`Initiating Macintosh Login.`",
+        "`Loading Macintosh... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Loading Macintosh... 3%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Loading Macintosh... 9%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Loading Macintosh... 23%\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Loading Macintosh... 39%\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Loading Macintosh... 69%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
+        "`Loading Macintosh... 89%\n█████████████████████▒▒▒▒ `",
+        "`Loading Macintosh... 100%\n█████████████████████████ `",
+        "`Welcome...\n\nStock OS: Symbian OS\nCurrent OS: Macintosh`\n\n**My PC Specs:**\n\n **CPU:** __2.9GHz Intel Core i9-8950HK (hexa-core, 12MB cache, up to 4.8GHz)__\n\n**Graphics:** __Nvidia GeForce GTX 1080 OC (8GB GDDR5X)__\n\n**RAM:** __32GB DDR4 (2,666MHz)__\n\n**Screen:** __17.3-inch, QHD (2,560 x 1,440) 120Hz G-Sync__\n\n**Storage:** __512GB PCIe SSD, 1TB HDD (7,200 rpm)__\n\n**Ports:** __2 x USB 3.0, 1 x USB-C 3.0, 1 x USB-C (Thunderbolt 3), HDMI, mini DisplayPort, Ethernet, headphone jack, microphone jack__\n\n**Connectivity:** __Killer 1550 802.11ac Wi-Fi, Bluetooth 5.0__\n\n**Camera:** __Alienware FHD camera, Tobii IR Eye-tracking with Windows Hello__\n\n**Size:** __16.7 x 13.1 x 1.18 inches (42.4 x 33.2 x 2.99cm; W x D x H)__",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -289,13 +292,13 @@ async def _(event):
     animation_ttl = range(7)
     event = await edit_or_reply(event, "os")
     animation_chars = [
-        "`Scanning OS...`",
-        "`Scanning OS......`",
-        "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n☑️ `.macos`\n☑️ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
-        "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n☑️ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
-        "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
-        "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n☑️ `.stock`",
-        "__Current Loaded OS: Symbian OS__\n\n**To Boot Other OS, Use The Following Trigger:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n✅ `.stock`\n\nDeveloped By: @Jisan7509",
+        "`Memeriksa OS...`",
+        "`Memeriksa OS......`",
+        "__Os yang dimuat saat ini: Symbian OS__\n\n**Untuk Boot OS Lain, Gunakan Cara Berikut:**\n☑️ `.macos`\n☑️ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
+        "__Os yang dimuat saat ini: Symbian OS__\n\n**Untuk Boot OS Lain, Gunakan Cara Berikut:**\n✅ `.macos`\n☑️ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
+        "__Os yang dimuat saat ini: Symbian OS__\n\n**Untuk Boot OS Lain, Gunakan Cara Berikut:**\n✅ `.macos`\n✅ `.windows`\n☑️ `.linux`\n☑️ `.stock`",
+        "__Os yang dimuat saat ini: Symbian OS__\n\n**Untuk Boot OS Lain, Gunakan Cara Berikut:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n☑️ `.stock`",
+        "__Os yang dimuat saat ini: Symbian OS__\n\n**Untuk Boot OS Lain, Gunakan Cara Berikut:**\n✅ `.macos`\n✅ `.windows`\n✅ `.linux`\n✅ `.stock`\n\nDeveloped By: @okinio",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
