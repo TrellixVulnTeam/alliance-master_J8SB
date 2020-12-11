@@ -101,13 +101,13 @@ async def save_welcome(event):
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Welcome note {} for this chat.`"
+    success = "`Welcome note {} yang tersimpan.`"
     if addwelcome_setting(event.chat_id, 0, string, msg_id) is True:
         return await edit_or_reply(event, success.format("saved"))
     rmwelcome_setting(event.chat_id)
     if addwelcome_setting(event.chat_id, 0, string, msg_id) is True:
         return await edit_or_reply(event, success.format("updated"))
-    await edit_or_reply("Error while setting welcome in this group")
+    await edit_or_reply("Error saat setting welcome grup ini")
 
 
 @bot.on(admin_cmd(pattern="clearpwel$"))
@@ -116,9 +116,9 @@ async def del_welcome(event):
     if event.fwd_from:
         return
     if rmwelcome_setting(event.chat_id) is True:
-        await edit_or_reply(event, "`Welcome note deleted for this chat.`")
+        await edit_or_reply(event, "`Welcome note telah dihapus.`")
     else:
-        await edit_or_reply(event, "`Do I have a welcome note here ?`")
+        await edit_or_reply(event, "`Apakah aku punya pesan welcome disini?`")
 
 
 @bot.on(admin_cmd(pattern="listpwel$"))
@@ -128,17 +128,17 @@ async def show_welcome(event):
         return
     cws = getcurrent_welcome_settings(event.chat_id)
     if not cws:
-        await edit_or_reply(event, "`No pwelcome message saved here.`")
+        await edit_or_reply(event, "`Tidak ada satupun pwelcome yang tersimpan disini`")
         return
     if cws.f_mesg_id:
         msg_o = await bot.get_messages(entity=BOTLOG_CHATID, ids=int(cws.f_mesg_id))
         await edit_or_reply(
-            event, "`I am currently pwelcoming new users with this welcome note.`"
+            event, "`Saat ini saya mengundang pengguna baru dengan catatan selamat datang ini.`"
         )
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws.reply:
         await edit_or_reply(
-            event, "`I am currently pwelcoming new users with this welcome note.`"
+            event, "`Saat ini saya mengundang pengguna baru dengan catatan selamat datang ini.`"
         )
         await event.reply(cws.reply)
 
