@@ -15,7 +15,7 @@ async def _(event):
         await event.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
     await edit_or_reply(
         event,
-        "**Bot sedang Restart.**\nNanti `.ping` lagi sekitar 1-2 menit untuk mengecek sudah online atau belum. Harap sabar saat melakukan restart.",
+        "Bot sedang Restart.**\nNanti `.ping` lagi sekitar 1-2 menit untuk mengecek sudah online atau belum. Harap sabar saat melakukan restart",
     )
     await bot.disconnect()
     execl(sys.executable, sys.executable, *sys.argv)
@@ -31,12 +31,12 @@ async def _(event):
             await event.client.send_message(
                 BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down"
             )
-        await edit_or_reply(event, "`Turning off bot now ...Manually turn me on later`")
+        await edit_or_reply(event, "`Shutdown bot ...Nanti Kamu Harus Menghidupkannya Manual`")
         HEROKU_APP.process_formation()["userbot"].scale(0)
     else:
         await edit_or_reply(
             event,
-            "`Set HEROKU_APP_NAME and HEROKU_API_KEY to work this function properly`",
+            "`Set HEROKU_APP_NAME dan HEROKU_API_KEY untuk bisa di gunakan`",
         )
         await bot.disconnect()
 
@@ -52,11 +52,11 @@ async def _(event):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "You put the bot to sleep for " + str(counter) + " seconds",
+            "Kamu menentukan bot untuk tidur selama " + str(counter) + " detik",
         )
-    event = await edit_or_reply(event, f"`ok, let me sleep for {counter} seconds`")
+    event = await edit_or_reply(event, f"`ok, aku akan tertidur selama {counter} detik`")
     sleep(counter)
-    await event.edit("`OK, I'm awake now.`")
+    await event.edit("`Aku Terbangun..`")
 
 
 CMD_HELP.update(
