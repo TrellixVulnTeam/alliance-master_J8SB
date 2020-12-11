@@ -29,7 +29,7 @@ async def fastpurger(purg):
     else:
         await edit_or_reply(
             purg,
-            "`No message specified.`",
+            "`hah?apa tuh.?`",
         )
         return
 
@@ -37,7 +37,7 @@ async def fastpurger(purg):
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
         purg.chat_id,
-        "Fast purge complete!\nPurged " + str(count) + " messages.",
+        "Menghapus Pesan Berhasil!\nTotal " + str(count) + " Pesan.",
     )
 
     if BOTLOG:
@@ -66,7 +66,7 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "`Purge complete!` Purged " + str(count) + " messages.",
+        "`Menghapus Pesan Berhasil!` Total " + str(count) + " Pesan.",
     )
     if BOTLOG:
         await delme.client.send_message(
@@ -82,7 +82,7 @@ async def purgeme(delme):
 @bot.on(sudo_cmd(allow_sudo=True, pattern="del$"))
 @errors_handler
 async def delete_it(delme):
-    """ For .del command, delete the replied message. """
+    """ Perintah .del untuk, menghapus pesan balasan. """
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
         try:
@@ -95,7 +95,7 @@ async def delete_it(delme):
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Well, I can't delete a message"
+                    BOTLOG_CHATID, "Yah, gabisa di hapus :("
                 )
 
 
