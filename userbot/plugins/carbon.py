@@ -48,7 +48,7 @@ async def carbon_api(e):
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
-    await cat.edit("`Be Patient...\n50%`")
+    await cat.edit("`Sabar Brah...\n50%`")
     download_path = "./"
     driver.command_executor._commands["send_command"] = (
         "POST",
@@ -65,13 +65,13 @@ async def carbon_api(e):
     await cat.edit("`Processing..\n75%`")
     # Waiting for downloading
     await asyncio.sleep(2)
-    await cat.edit("`Done Dana Done...\n100%`")
+    await cat.edit("`Selesai...\n100%`")
     file = "./carbon.png"
     await cat.edit("`Uploading..`")
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Here's your carbon, \n Carbonised by cat",
+        caption="Ini Hasil nya, \n Carbonised by okinio",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -100,7 +100,7 @@ async def carbon_api(e):
         skeme = None  # Importing message to module
     pcode = deEmojify(pcode)
     code = quote_plus(pcode)  # Converting to urlencoded
-    await cat.edit("`Meking Carbon...`\n`25%`")
+    await cat.edit("`Memembuat Carbon...`\n`25%`")
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -115,7 +115,7 @@ async def carbon_api(e):
         executable_path=Config.CHROME_DRIVER, options=chrome_options
     )
     driver.get(url)
-    await cat.edit("`Be Patient...\n50%`")
+    await cat.edit("`Sabar Brah...\n50%`")
     download_path = "./"
     driver.command_executor._commands["send_command"] = (
         "POST",
@@ -148,13 +148,13 @@ async def carbon_api(e):
     color_name = driver.find_element_by_xpath(
         "/html/body/div[1]/main/div[3]/div[2]/div[1]/div[1]/div/span[2]/input"
     ).get_attribute("value")
-    await cat.edit("`Done Dana Done...\n100%`")
+    await cat.edit("`Selesai...\n100%`")
     file = "./carbon.png"
     await cat.edit("`Uploading..`")
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="`Here's your carbon!` \n**Colour Scheme: **`{}`".format(color_name),
+        caption="`Ini Hasilnya!` \n**Colour Scheme: **`{}`".format(color_name),
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
