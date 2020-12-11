@@ -255,7 +255,7 @@ if Config.PRIVATE_GROUP_ID is not None:
                     f"`Hi `{mention}`, Aku belum menyetujui Kamu untuk mengirimi pesan pribadi, Jangan mengirim spam ke kotak masuk ku."
                     f"Cukup berikan alasannya dan tunggu sampai Kamu disetujui.\
                                     \n\nKamu mendapat {warns}/{totalwarns} peringatan`\
-                                    \n\n**Kirim** `/mulai` **agar Aku dapat memutuskan mengapa Kamu ada di sini.**"
+                                    \n\n**Kirim** `/start` **agar Aku dapat memutuskan mengapa Kamu ada di sini.**"
                 )
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
