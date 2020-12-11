@@ -52,7 +52,7 @@ async def set_not_afk(event):
     if "afk" not in current_message and "on" in USERAFK_ON:
         shite = await event.client.send_message(
             event.chat_id,
-            "`Aku kembali! \nTadi " + endtime + " Afk`",
+            "`Aku kembali!`",
         )
         USERAFK_ON = {}
         afk_time = None
@@ -62,9 +62,7 @@ async def set_not_afk(event):
             await event.client.send_message(
                 BOTLOG_CHATID,
                 "#AFKFALSE \n`Set AFK mode to False\n"
-                + "Aku Kembali! \nTadi "
-                + endtime
-                + " Afk`",
+                + "Aku Kembali!`",
             )
 
 
@@ -109,11 +107,11 @@ async def on_afk(event):
         msg = None
         if link and reason:
             message_to_reply = (
-                f"**AFK Dari :** `{endtime}`\n\n**{reason}**"
+                f"**{reason}**"
             )
         elif reason:
             message_to_reply = (
-                f"**AFK Dari :** `{endtime}`\n\n`{reason}`"
+                f"`{reason}`"
             )
         else:
             message_to_reply = (
