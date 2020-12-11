@@ -30,7 +30,7 @@ from .sql_helper.mute_sql import is_muted, mute, unmute
 PP_TOO_SMOL = "`Gambar Terlalu Kecil.!`"
 PP_ERROR = "`Gagal Memproses Gambar`"
 NO_ADMIN = "`Kamu Bukan Admin.! #sadcok`"
-NO_PERM = "`I don't have sufficient permissions! This is so sed. Alexa play despacito`"
+NO_PERM = "`Kamu Siapa? Bukan Admin Disini.`#sadcok"
 CHAT_PP_CHANGED = "`Gambar Berhasil Diganti`"
 INVALID_MEDIA = "`Inpalid, Coba Periksa Lagi..`"
 
