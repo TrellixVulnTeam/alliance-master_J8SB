@@ -69,6 +69,7 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 12])
+        await event.delete()
 
 
 @bot.on(admin_cmd(pattern=r"dump$", outgoing=True))
@@ -240,16 +241,16 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@bot.on(admin_cmd(pattern=r"jio$", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"jio$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"three$", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"three$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     animation_interval = 1
     animation_ttl = range(19)
-    event = await edit_or_reply(event, "jio network boosting...")
+    event = await edit_or_reply(event, "internet three boosting...")
     animation_chars = [
-        "`Connecting To JIO NETWORK ....`",
+        "`Menyambungkan ke INTERNET Three ....`",
         "`█ ▇ ▆ ▅ ▄ ▂ ▁`",
         "`▒ ▇ ▆ ▅ ▄ ▂ ▁`",
         "`▒ ▒ ▆ ▅ ▄ ▂ ▁`",
@@ -258,7 +259,7 @@ async def _(event):
         "`▒ ▒ ▒ ▒ ▒ ▂ ▁`",
         "`▒ ▒ ▒ ▒ ▒ ▒ ▁`",
         "`▒ ▒ ▒ ▒ ▒ ▒ ▒`",
-        "*Optimising JIO NETWORK...*",
+        "*Optimasi INTERNET Three...*",
         "`▒ ▒ ▒ ▒ ▒ ▒ ▒`",
         "`▁ ▒ ▒ ▒ ▒ ▒ ▒`",
         "`▁ ▂ ▒ ▒ ▒ ▒ ▒`",
@@ -267,7 +268,7 @@ async def _(event):
         "`▁ ▂ ▄ ▅ ▆ ▒ ▒`",
         "`▁ ▂ ▄ ▅ ▆ ▇ ▒`",
         "`▁ ▂ ▄ ▅ ▆ ▇ █`",
-        "**JIO NETWORK Boosted....**",
+        "**Boost INTERNET Three....**",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -300,7 +301,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "animation3": "__**PLUGIN NAME :** Animation3__\
-\n\n📌** CMD ➥** `.star` | `.boxs` | `.rain` | `.deploy` | `.dump` | `.fleaveme` | `.loveu` | `.plane` | `.police` | `.jio` | `.solarsystem` \
+\n\n📌** CMD ➥** `.star` | `.boxs` | `.rain` | `.deploy` | `.dump` | `.fleaveme` | `.loveu` | `.plane` | `.police` | `.three` | `.solarsystem` \
 \n\n**USAGE   ➥  **These are animation bruh..Try & check yourself\
 "
     }
