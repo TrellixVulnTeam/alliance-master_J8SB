@@ -140,12 +140,12 @@ async def _(event):
         "😧",
         "😡",
         "😢",
-        "‎**Repo of catuserbot**",
+        "‎**Repo of okinioserver**",
         "😁",
         "😧",
         "😡",
         "😢",
-        "__**[Good to See you guys....]**__(github.com/Jisan09/catuserbot)",
+        "__**[Senang Melihat Mu....]**__(github.com/allianceprojects/catuserbot)",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -173,15 +173,15 @@ async def _(event):
         return
     animation_interval = 2
     animation_ttl = range(12)
-    event = await edit_or_reply(event, "Hey There....")
-    animation_chars = ["🐵", "🙉", "🙈", "🙊", "🖕‎🐵🖕", "**Good to See you friend....**"]
+    event = await edit_or_reply(event, "Hallo....")
+    animation_chars = ["🐵", "🙉", "🙈", "🙊", "🖕‎🐵🖕", "**Senang Melihat Mu....**"]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 6])
 
 
-@bot.on(admin_cmd(pattern=f"herber$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"herber$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"serper$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"serper$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -296,8 +296,8 @@ async def _(event):
 CMD_HELP.update(
     {
         "animation5": "__**PLUGIN NAME :** Animation5__\
-\n\n📌** CMD ➥** `.thinking` | `.loading` | `.square` | `.up` | `.round` | `.hart` | `.anim` | `.fnl` | `.monkey` | `.herber` | `.hand` | `.gsg` | `.theart`\
-\n\n**USAGE   ➥  **These are animation bruh..Try & check yourself\
+\n\n📌** CMD ➥** `.thinking` | `.loading` | `.square` | `.up` | `.round` | `.hart` | `.anim` | `.fnl` | `.monkey` | `.serper` | `.hand` | `.gsg` | `.theart`\
+\n\n**USAGE   ➥  **Ini adalah animasi. Coba & periksa sendiri\
 "
     }
 )
