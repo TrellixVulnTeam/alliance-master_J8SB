@@ -49,16 +49,16 @@ UNBAN_RIGHTS = ChatBannedRights(
 async def catgban(cat):
     if cat.fwd_from:
         return
-    cate = await edit_or_reply(cat, "gbanning.......")
+    cate = await edit_or_reply(cat, "gbanning users.......")
     start = datetime.now()
     user, reason = await get_user_from_event(cat)
     if not user:
         return
     if user.id == (await cat.client.get_me()).id:
-        await cate.edit("why would I ban myself")
+        await cate.edit("kenapa ingin gban diri sendiri")
         return
     if user.id in CAT_ID:
-        await cate.edit("why would I ban my dev")
+        await cate.edit("Kenapa ingin gban dev kamu")
         return
     try:
         hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -67,7 +67,7 @@ async def catgban(cat):
         pass
     if gban_sql.is_gbanned(user.id):
         await cate.edit(
-            f"the [user](tg://user?id={user.id}) is already in gbanned list any way checking again"
+            f"dia [user](tg://user?id={user.id}) sudah berada di list gban"
         )
     else:
         gban_sql.catgban(user.id, reason)
@@ -76,10 +76,10 @@ async def catgban(cat):
     count = 0
     sandy = len(san)
     if sandy == 0:
-        await cate.edit("you are not admin of atleast one group ")
+        await cate.edit("kamu bukan admin")
         return
     await cate.edit(
-        f"initiating gban of the [user](tg://user?id={user.id}) in `{len(san)}` groups"
+        f"inisiasi untuk gban dia [user](tg://user?id={user.id}) di `{len(san)}` group"
     )
     for i in range(sandy):
         try:
