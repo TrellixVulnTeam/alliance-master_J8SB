@@ -42,7 +42,7 @@ async def _(event):
         )
         await asyncio.sleep(10)
         await no_admin_privilege_message.edit(
-            "This is useless SPAM dude. Stop this, enjoy chat man ", link_preview=False
+            "Ini SPAM yang tidak berguna. Hentikan ini, nikmatilah obrolan ", link_preview=False
         )
     else:
         await event.client.send_message(
@@ -67,7 +67,7 @@ async def _(event):
         sql.set_flood(event.chat_id, input_str)
         sql.__load_flood_settings()
         await event.edit(
-            "Antiflood updated to {} in the current chat".format(input_str)
+            "Antiflood updated untuk {} didalam ruang chat init".format(input_str)
         )
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
