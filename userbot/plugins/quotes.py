@@ -29,7 +29,7 @@ async def quote_search(event):
     if response is not None:
         await catevent.edit(f"`{response['text']}`")
     else:
-        await edit_delete(catevent, "`Sorry Zero results found`", 5)
+        await edit_delete(catevent, "`Hasil yang dicari Tidak ada`", 5)
 
 
 CMD_HELP.update(
