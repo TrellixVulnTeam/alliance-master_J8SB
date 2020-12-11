@@ -21,7 +21,7 @@ PREV_REPLY_MESSAGE = {}
 CACHE = {}
 PMPERMIT_PIC = Config.PMPERMIT_PIC
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
-USER_BOT_WARN_ZERO = "`⚠️ PESAN MU AKAN DI FILTER OLEH @okinio MOHON SABAR SEBENTAR`\n`⛔️ SPAMMING = BLOCK.`\n\n **Now GTFO, i'm playing wildrift** "
+USER_BOT_WARN_ZERO = "Kamu melakukan spam pada kotak masuk Ku. Kamu Telah diblokir oleh bot saya.\n\n**Get The Fvck Out, Aku Lanjut main PLAYERUNKNOWN'S BATTLEGROUNDS** "
 
 
 if Config.PRIVATE_GROUP_ID is not None:
@@ -48,7 +48,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         else:
             user, reason = await get_user_from_event(event, secondgroup=True)
             if not user:
-                return await edit_delete(event, "`Couldn't Fectch user`", 5)
+                return await edit_delete(event, "`User tidak diketahui`", 5)
             if not reason:
                 reason = "Not mentioned"
         if not pmpermit_sql.is_approved(user.id):
@@ -62,7 +62,7 @@ if Config.PRIVATE_GROUP_ID is not None:
             pmpermit_sql.approve(user.id, reason)
             await edit_delete(
                 event,
-                f"`Approved to pm `[{user.first_name}](tg://user?id={user.id})",
+                f"`Approved... `[{user.first_name}](tg://user?id={user.id})",
                 5,
             )
             if user.id in PMMESSAGE_CACHE:
@@ -75,7 +75,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         else:
             await edit_delete(
                 event,
-                f"[{user.first_name}](tg://user?id={user.id}) `is already in approved list`",
+                f"[{user.first_name}](tg://user?id={user.id}) `ada di list approve`",
                 5,
             )
 
@@ -86,7 +86,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         else:
             user, reason = await get_user_from_event(event, secondgroup=True)
             if not user:
-                return await edit_delete(event, "`Couldn't Fectch user`", 5)
+                return await edit_delete(event, "`User tidak diketahui`", 5)
             if reason == "all":
                 return
         if user.id in PM_START:
@@ -95,12 +95,12 @@ if Config.PRIVATE_GROUP_ID is not None:
             pmpermit_sql.disapprove(user.id)
             await edit_or_reply(
                 event,
-                f"`disapproved to pm` [{user.first_name}](tg://user?id={user.id})",
+                f"`disapproved... ` [{user.first_name}](tg://user?id={user.id})",
             )
         else:
             await edit_or_reply(
                 event,
-                f"[{user.first_name}](tg://user?id={user.id}) `is not yet approved`",
+                f"[{user.first_name}](tg://user?id={user.id}) `tidak ada di list approved`",
                 5,
             )
 
@@ -111,11 +111,11 @@ if Config.PRIVATE_GROUP_ID is not None:
         else:
             user, reason = await get_user_from_event(event)
             if not user:
-                return await edit_delete(event, "`Couldn't Fectch user`", 5)
+                return await edit_delete(event, "`User tidak diketahui`", 5)
         if user.id in PM_START:
             PM_START.remove(user.id)
         await event.edit(
-            f"`You are blocked Now .You Can't Message Me from now..`[{user.first_name}](tg://user?id={user.id})"
+            f"`Kamu diblokir Sekarang. Kamu Tidak Bisa Mengirim Pesan kepada aku Mulai Sekarang...`[{user.first_name}](tg://user?id={user.id})"
         )
         await event.client(functions.contacts.BlockRequest(user.id))
 
@@ -129,35 +129,35 @@ if Config.PRIVATE_GROUP_ID is not None:
                 return await edit_delete(event, "`Couldn't Fectch user`", 5)
         await event.client(functions.contacts.UnblockRequest(user.id))
         await event.edit(
-            f"`You are Unblocked Now .You Can Message Me From now..`[{user.first_name}](tg://user?id={user.id})"
+            f"`Kamu tidak diblokir Sekarang. Kamu Bisa Mengirim Pesan kepada aku Mulai Sekarang..`[{user.first_name}](tg://user?id={user.id})"
         )
 
     @bot.on(admin_cmd(pattern="listapproved$"))
     async def approve_p_m(event):
         approved_users = pmpermit_sql.get_all_approved()
-        APPROVED_PMs = "Current Approved PMs\n"
+        APPROVED_PMs = "PM yang di setujui saat ini\n"
         if len(approved_users) > 0:
             for sender in approved_users:
                 if sender.reason:
-                    APPROVED_PMs += f"👉 [{sender.chat_id}](tg://user?id={sender.chat_id}) for {sender.reason}\n"
+                    APPROVED_PMs += f"👉 [{sender.chat_id}](tg://user?id={sender.chat_id}) untuk {sender.reason}\n"
                 else:
                     APPROVED_PMs += (
-                        f"👉 [{sender.chat_id}](tg://user?id={sender.chat_id})\n"
+                        f"=> [{sender.chat_id}](tg://user?id={sender.chat_id})\n"
                     )
         else:
-            APPROVED_PMs = "`You havent approved anyone yet`"
+            APPROVED_PMs = "`Kamu belum menyetujui siapa pun`"
         await edit_or_reply(
             event,
             APPROVED_PMs,
             file_name="approvedpms.txt",
-            caption="`Current Approved PMs`",
+            caption="`PM yang di setujui saat ini`",
         )
 
     @bot.on(admin_cmd(pattern="(disapprove all|da all)$"))
     async def disapprove_p_m(event):
         if event.fwd_from:
             return
-        result = "`ok , everyone is disapproved now`"
+        result = "`oke, semua orang tidak disetujui sekarang`"
         pmpermit_sql.disapprove_all()
         await edit_delete(event, result, parse_mode=parse_pre, time=10)
 
@@ -247,15 +247,15 @@ if Config.PRIVATE_GROUP_ID is not None:
                         warns=warns,
                     )
                     + "\n\n"
-                    + "**Send** `/start` ** so that my master can decide why you're here.**"
+                    + "**Kirim** `/mulai` **agar Aku dapat memutuskan mengapa Kamu ada di sini.**"
                 )
             else:
 
                 USER_BOT_NO_WARN = (
-                    f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`\
-                                    \n\n**Send** `/start` **so that my master can decide why you're here.**"
+                    f"`Hi `{mention}`, Aku belum menyetujui Kamu untuk mengirimi pesan pribadi, Jangan mengirim spam ke kotak masuk ku."
+                    f"Cukup berikan alasannya dan tunggu sampai Kamu disetujui.\
+                                    \n\nKamu mendapat {warns}/{totalwarns} peringatan`\
+                                    \n\n**Kirim** `/mulai` **agar Aku dapat memutuskan mengapa Kamu ada di sini.**"
                 )
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
@@ -276,9 +276,9 @@ if Config.PRIVATE_GROUP_ID is not None:
                 )
             else:
                 USER_BOT_NO_WARN = (
-                    f"`Hi `{mention}`, I haven't approved you yet to personal message me, Don't spam my inbox."
-                    f"Just say the reason and wait until you get approved.\
-                                    \n\nyou have {warns}/{totalwarns} warns`"
+                    f"`Hi `{mention}`, Aku belum menyetujui Kamu untuk mengirimi pesan pribadi, Jangan mengirim spam ke kotak masuk ku."
+                    f"Cukup berikan alasannya dan tunggu sampai Kamu disetujui.\
+                                    \n\nKamu mendapat {warns}/{totalwarns} peringatan`"
                 )
         if PMPERMIT_PIC:
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
