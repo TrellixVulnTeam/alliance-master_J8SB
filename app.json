@@ -1,6 +1,6 @@
 {
-  "name": "Catuserbot",
-  "description": "Userbot created by https://t.me/mrconfused contact @catuserbot_support for support and Custom fork by @Jisan7509",
+  "name": "Allianceuserbot",
+  "description": "Userbot created by https://t.me/mrconfused contact @catuserbot_support for support and Custom fork by @okinioserver",
   "logo": "https://telegra.ph/file/3d60313110c58684b31ea.jpg",
   "keywords": [
     "telegram",
@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Jisan09/catuserbot/",
+  "repository": "https://github.com/allianceprojects/catuserbot/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
@@ -23,7 +23,7 @@
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "Give your name, like Jisan",
+      "description": "Give your name, like Okinio",
       "value": ""
     },
     "APP_ID": {
