@@ -1,7 +1,7 @@
 """
-# Edited by @Jisan7509
+# Edited by @okinio
 custom cmds by @heyworld to make it look more gayish
-Thanks to @AbhinavShinde @Jisan7509 for strings
+Thanks to @AbhinavShinde for strings
 Sing credits :by @PhycoNinja13b
 Syntax: .qt inspired by @Deonnn's being_logical.py
 Syntax: .belo by @Deonnn
@@ -23,7 +23,7 @@ from . import CMD_HELP, catmemes
 async def source(e):
     await edit_or_reply(
         e,
-        "Click [here](https://github.com/Jisan09/catuserbot) to open this lit af repo.",
+        "Klik [Disini](https://github.com/allianceprojects/catuserbot) untuk membuka repo yang sedang dipakai.",
     )
 
 
@@ -1945,7 +1945,7 @@ CMD_HELP.update(
     {
         "memestext": "__**PLUGIN NAME :** MemesText__\
 \n\n📌** CMD ➥** `.repo`\
-\n**USAGE   ➥  **Send the repo.\
+\n**USAGE   ➥  **Kirim repo.\
 \n\n📌** CMD ➥** `.noob`\
 \n**USAGE   ➥  **Whadya want to know? Are you a NOOB?\
 \n\n📌** CMD ➥** `.pro`\
