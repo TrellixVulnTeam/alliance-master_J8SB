@@ -18,7 +18,7 @@ Get APP ID and API HASH from [HERE](https://my.telegram.org) and BOT TOKEN from 
 </p>
 
 
-[![catuserbot logo](https://telegra.ph/file/7e1e89621fabbf02596f8.jpg)](https://heroku.com/deploy)
+[![catuserbot logo](https://telegra.ph/file/d353878bcbb48208edae7.jpg)](https://heroku.com/deploy)
 
 
 ### Join [here](https://t.me/okinioserver) for updates and tuts and [here](https://t.me/okinioserver) for discussion and bugs
