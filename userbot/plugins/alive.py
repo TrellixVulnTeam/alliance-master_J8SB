@@ -33,7 +33,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Okiniobot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>BadCat</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>"
+        cat_caption += "    <a href = https://github.com/sandy1709/catuserbot><b>Sumber</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>Kodeku</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             CAT_IMG,
@@ -54,7 +54,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} Okiniobot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://github.com/sandy1709/catuserbot><b>GoodCat</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>BadCat</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>",
+            "    <a href = https://github.com/sandy1709/catuserbot><b>Sumber</b></a> | <a href = https://github.com/allianceprojects/catuserbot><b>Kodeku</b></a> | <a href = https://t.me/okinioserver><b>Support</b></a>",
             parse_mode="html",
         )
 
