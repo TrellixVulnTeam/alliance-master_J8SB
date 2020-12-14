@@ -111,7 +111,7 @@ async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
     """
-    dyno = await edit_or_reply(dyno, "`Processing...`")
+    dyno = await edit_or_reply(dyno, "`Mengambil data...`")
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -127,7 +127,7 @@ async def dyno_usage(dyno):
     r = requests.get(heroku_api + path, headers=headers)
     if r.status_code != 200:
         return await dyno.edit(
-            "`Error: something bad happened`\n\n" f">.`{r.reason}`\n"
+            "`Error: Opss, ada yang salah`\n\n" f">.`{r.reason}`\n"
         )
     result = r.json()
     quota = result["account_quota"]
@@ -153,12 +153,12 @@ async def dyno_usage(dyno):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     return await dyno.edit(
-        "**Dyno Usage**:\n\n"
-        f" -> `Dyno usage for`  **{Config.HEROKU_APP_NAME}**:\n"
+        "**Informasi Dynoku**:\n\n"
+        f" => `Dyno yang Sudah Terpakai`  **{Config.HEROKU_APP_NAME}**:\n"
         f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
         f"**|**  [`{AppPercentage}`**%**]"
         "\n\n"
-        " -> `Dyno hours quota remaining this month`:\n"
+        " => `Dyno yang Tersisa untuk Bulan ini`:\n"
         f"     •  `{hours}`**h**  `{minutes}`**m**  "
         f"**|**  [`{percentage}`**%**]"
     )
