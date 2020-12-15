@@ -27,7 +27,7 @@ async def dogeads(event):
         link = ""
     elif link == "":
         link = ""
-    catevent = await edit_or_reply(event, "```Sedang mengirim hasil....```")
+    catevent = await edit_or_reply(event, "```Sedang melihat harga tukar koin....```")
     async with event.client.conversation("@CryptoConvBot") as conv:
         try:
             response = conv.wait_event(
@@ -35,6 +35,7 @@ async def dogeads(event):
             )
             await conv.send_message(f"{link}")
             response = await response
+            await message.delete(5)
         except YouBlockedUserError:
             await catevent.edit("```Unblock @CryptoConvBot nya cok```")
             return
