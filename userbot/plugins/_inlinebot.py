@@ -235,7 +235,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi \n\nTanya kr @okinio ya.."
+            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
