@@ -54,6 +54,7 @@ async def dogeads(event):
             await catevent.delete()
             await event.client.forward_messages(event.chat_id, response.message)
             await event.client.send_read_acknowledge(conv.chat_id)
+            await message.delete(5)
 
 
 CMD_HELP.update(
