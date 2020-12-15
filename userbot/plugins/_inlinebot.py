@@ -25,7 +25,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = [
                 (
                     custom.Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/allianceprojects/catuserbot"),
+                    Button.url("Whoami", "https://t.me/okinio"),
                 )
             ]
             if CAT_IMG and CAT_IMG.endswith((".jpg", ".png")):
@@ -159,7 +159,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Kamu tidak punya izin, mau ngapain mencet ini? \n\nHubungi @okinio untuk menggunakan feature.."
+            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -176,7 +176,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Kamu tidak punya izin, mau ngapain mencet ini? \n\nHubungi @okinio untuk menggunakan feature.."
+            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.*)")))
@@ -192,7 +192,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = "Kamu tidak punya izin, mau ngapain mencet ini? \n\nHubungi @okinio untuk menggunakan feature.."
+                    reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
             except KeyError:
                 reply_pop_up_alert = "Pesan telah tidak ada di bot server"
         else:
@@ -235,7 +235,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = "Kamu tidak punya izin, mau ngapain mencet ini? \n\nHubungi @okinio untuk menggunakan feature.."
+            reply_pop_up_alert = "Ini Menu Pribadi \n\nTanya kr @okinio ya.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
@@ -243,7 +243,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("menu closed")
         else:
-            reply_pop_up_alert = "Kamu tidak punya izin, mau ngapain mencet ini? \n\nHubungi @okinio untuk menggunakan feature.."
+            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
@@ -291,11 +291,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⌫", data="{}_prev({})".format(prefix, modulo_page)
+                    "<", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("⌧ Tutup", data="close"),
+                custom.Button.inline("×", data="close"),
                 custom.Button.inline(
-                    "⌦", data="{}_next({})".format(prefix, modulo_page)
+                    ">", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
