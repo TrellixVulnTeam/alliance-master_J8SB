@@ -20,9 +20,12 @@ async def dogeads(myxc):
 async def dogeads(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(1)
-    if link in "":
-        link = ""
+    link = event.pattern_match.group(0)
+    koin1 = event.pattern_match.group(1)
+    koin2 = event.pattern_match.group(2)
+    koin3 = event.pattern_match.group(3)
+    if link in ".xc":
+        link = "/convert {koin1} {koin2} {koin3}"
     elif link in "":
         link = ""
     elif link == "":
