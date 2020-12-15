@@ -9,7 +9,7 @@ from . import CMD_HELP
 
 @bot.on(admin_cmd(outgoing=True, pattern="xc_help$"))
 @bot.on(sudo_cmd(outgoing=True, pattern="xc_help$", allow_sudo=True))
-async def dogeads(myxc):
+async def exchange(myxc):
     await edit_or_reply(
         myxc, "Semua perintah ada [disini](https://nekobin.com/pemutuzeri) "
     )
@@ -17,15 +17,12 @@ async def dogeads(myxc):
 
 @bot.on(admin_cmd(pattern="xc(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(outgoing=True, pattern="xc(?: |$)(.*)", allow_sudo=True))
-async def dogeads(event):
+async def exchange(event):
     if event.fwd_from:
         return
-    link = event.pattern_match.group(0)
-    koin1 = event.pattern_match.group(1)
-    koin2 = event.pattern_match.group(2)
-    koin3 = event.pattern_match.group(3)
-    if link in ".xc":
-        link = "/convert {koin1} {koin2} {koin3}"
+    link = event.pattern_match.group(1)
+    if link in "":
+        link = "/convert {link}"
     elif link in "":
         link = ""
     elif link == "":
