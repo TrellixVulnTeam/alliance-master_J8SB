@@ -58,7 +58,7 @@ async def get_media(event):
     except BaseException:
         pass
     channel_username = event.pattern_match.group(1)
-    event = await edit_or_reply(event, "Downloading All Media From this Channel.")
+    event = await edit_or_reply(event, "Sedang Mengunduh Media File.")
     msgs = await event.client.get_messages(channel_username, limit=3000)
     with open("log.txt", "w") as f:
         f.write(str(msgs))
@@ -68,7 +68,7 @@ async def get_media(event):
             await event.client.download_media(msg, tempdir)
             i += 1
             await event.edit(
-                f"Downloading Media From this Channel.\n **DOWNLOADED : **`{i}`"
+                f"Memproses Unduhan...\n **Hasil : **`{i}`"
             )
     ps = subprocess.Popen(("ls", tempdir), stdout=subprocess.PIPE)
     output = subprocess.check_output(("wc", "-l"), stdin=ps.stdout)
@@ -76,7 +76,7 @@ async def get_media(event):
     output = str(output)
     output = output.replace("b'", "")
     output = output.replace("\\n'", "")
-    await event.edit(f"Successfully downloaded {output} number of media files")
+    await event.edit(f"Berhasil di Download {output} Media file")
 
 
 CMD_HELP.update(
