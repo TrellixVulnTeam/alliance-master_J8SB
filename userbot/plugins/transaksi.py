@@ -105,17 +105,17 @@ async def on_trx(event):
         return False
     if USERTRX_ON and not (await event.get_sender()).bot:
         msg = None
-        if link and name:
+        if link and reason:
             message_to_reply = (
-                f"**{name}**"
+                f"**Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?**"
             )
-        elif name:
+        elif reason:
             message_to_reply = (
-                f"`{name}`"
+                f"`Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
             )
         else:
             message_to_reply = (
-                f"`Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {name}\n`Ada apa? Sebentar ya?`"
+                f"`Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
             )
         if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
             msg = await event.reply(message_to_reply)
@@ -144,7 +144,7 @@ async def _(event):
     global last_trx_message
     global trx_start
     global trx_end
-    global name
+    global reason
     global link
     USERTRX_ON = {}
     trx_time = None
@@ -156,26 +156,26 @@ async def _(event):
         input_str = event.pattern_match.group(1)
         if ";" in input_str:
             msg, link = input_str.split(";", 1)
-            name = f"[{msg.strip()}]({link.strip()})"
+            reason = f"[{msg.strip()}]({link.strip()})"
             link = True
         else:
-            name = input_str
+            reason = input_str
             link = False
         last_seen_status = await event.client(
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             trx_time = datetime.now()
-        USERTRX_ON = f"on: {name}"
-        if name:
-            await edit_delete(event, f"{mention} `Sedang Transaksi Dengan >` {name}", 5)
+        USERTRX_ON = f"on: {reason}"
+        if reason:
+            await edit_delete(event, f"{mention} `Sedang Transaksi Dengan >` {reason}", 5)
         else:
             await edit_delete(event, f"{mention} `Sedang Transaksi!`", 5)
         if BOTLOG:
-            if name:
+            if reason:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"#TRANSAKSI \n{mention} `Sedang Transaksi Dengan >` {name}",
+                    f"#TRANSAKSI \n{mention} `Sedang Transaksi Dengan >` {reason}",
                 )
             else:
                 await event.client.send_message(
@@ -189,8 +189,8 @@ CMD_HELP.update(
         "trx": "__**PLUGIN NAME :** Trx__\
 \n\n📌** CMD ➥** `.trx` [Optional Reason]\
 \n**USAGE   ➥  **Sets you as trx.\nReplies to anyone who tags/PM's \
-you telling them that you are TRX(name)\n\n__Switches off TRX when you type back anything, anywhere.__\
-\n\n**Note :** If you want TRX with hyperlink use [ ; ] after name, then paste the media link.\
+you telling them that you are TRX(reason)\n\n__Switches off TRX when you type back anything, anywhere.__\
+\n\n**Note :** If you want TRX with hyperlink use [ ; ] after reason, then paste the media link.\
 \n**Example :** `.trx busy now ;<Media_link>`\
 \n\n📌** CMD ➥** `.untrx`\
 "
