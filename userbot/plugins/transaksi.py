@@ -19,8 +19,8 @@ last_trx_message = {}
 trx_start = {}
 
 
-@bot.on(admin_cmd(pattern=r"untrx ?(.*)", outgoing=True))
-async def set_not_trx(event):
+@bot.on(admin_cmd(pattern=r"untrx$", outgoing=True))
+async def _(event):
     if event.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
     global USERTRX_ON
