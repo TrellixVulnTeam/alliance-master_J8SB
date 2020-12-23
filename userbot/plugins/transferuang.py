@@ -17,7 +17,7 @@ async def _(event):
     name = event.pattern_match.group(1)
     animation_interval = 5
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "{DEFAULTUSER} Melakukan Transfer Uang...")
+    event = await edit_or_reply(event, "{mention} Melakukan Transfer Uang kepada {name} ...")
     animation_chars = [
                 "`Menyambungkan Ke Server Rekening...`",
                 "`✅ Login Ke Rekening` {DEFAULTUSER} `Sukses.`",
@@ -34,7 +34,6 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 11])
-        await event.delete(120)
 
 CMD_HELP.update(
     {
