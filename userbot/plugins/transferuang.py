@@ -11,8 +11,7 @@ async def _(event):
     if event.fwd_from:
         return
     name = event.pattern_match.group(1)
-    saldo = event.pattern_match.group(2)
-    animation_interval = 8
+    animation_interval = 20
     animation_ttl = range(11)
     event = await edit_or_reply(event, f"{mention} `Transfer Saldo Dana ke` {name}")
     animation_chars = [
@@ -26,11 +25,33 @@ async def _(event):
                 f"`Proses Transfer Uang Ke` {name} | `52%`\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ ",
                 f"`Proses Transfer Uang Ke` {name} | `84%`\n█████████████████████▒▒▒▒ ",
                 f"`Proses Transfer Uang Ke` {name} | `100%`\n█████████████████████████ ",
-                f"`✅ Transaksi Sukses.`\n{mention} `Telah Mengirim Saldo Dana Sebesar {saldo}$ Ke` {name} ",
+                f"`✅ Transaksi Sukses.`\n{mention} `Telah Mengirim Saldo Dana Sebesar 110$ Ke` {name} ",
             ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 11])
+
+@bot.on(admin_cmd(pattern=r"trx (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"trx (.*)", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    name = event.pattern_match.group(1)
+    shite = await edit_or_reply(event, f"{mention} `Sedang Melakukan Transaksi Dengan` {name}")
+    await asyncio.sleep(120)
+    await shite.delete()
+
+
+@bot.on(admin_cmd(pattern=r"untrx (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"untrx (.*)", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    name = event.pattern_match.group(1)
+    shite = await edit_or_reply(event, f"`Transaksi Dengan` {name} `Telah Selesai`")
+    await asyncio.sleep(60)
+    await shite.delete()
+
 
 CMD_HELP.update(
     {
