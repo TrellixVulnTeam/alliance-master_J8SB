@@ -11,21 +11,22 @@ async def _(event):
     if event.fwd_from:
         return
     name = event.pattern_match.group(1)
-    animation_interval = 5
+    saldo = event.pattern_match.group(2)
+    animation_interval = 8
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "{mention} `Melakukan Transfer Dana kepada` {name}")
+    event = await edit_or_reply(event, f"{mention} `Transfer Saldo Dana ke` {name}")
     animation_chars = [
                 "`Menyambungkan Ke Server Dana...`",
-                "`✅ Login Ke Dana Sukses.`",
-                "`Proses Transfer Uang Ke` {name} | `0%`\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `4%`\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `8%`\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `20%`\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `36%`\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `52%`\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `84%`\n█████████████████████▒▒▒▒ ",
-                "`Proses Transfer Uang Ke` {name} | `100%`\n██████████████████████████ ",
-                f"`✅ Transaksi Sukses.`\n\n{mention} `Telah Mengirim Uang Sebesar 110$ Ke` {name} ",
+                f"`Login Ke Dana` {mention} ",
+                f"`Proses Transfer Uang Ke` {name} | `0%`\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `4%`\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `8%`\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `20%`\n█████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `36%`\n█████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `52%`\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `84%`\n█████████████████████▒▒▒▒ ",
+                f"`Proses Transfer Uang Ke` {name} | `100%`\n█████████████████████████ ",
+                f"`✅ Transaksi Sukses.`\n{mention} `Telah Mengirim Saldo Dana Sebesar {saldo}$ Ke` {name} ",
             ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
