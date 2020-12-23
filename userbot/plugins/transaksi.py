@@ -19,9 +19,9 @@ last_trx_message = {}
 trx_start = {}
 
 
-@bot.on(admin_cmd(pattern=r"untrx$", outgoing=True))
+@bot.on(events.NewMessage(pattern=r".untrx", outgoing=True))
 async def set_not_afk(event):
-    if event.fwd_from:
+    if event.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
     global USERTRX_ON
     global trx_time
