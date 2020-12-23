@@ -1,4 +1,3 @@
-"""command: .tfx """
 # thx to @r4v4n4
 import asyncio
 
@@ -10,8 +9,8 @@ from . import ALIVE_NAME, CMD_HELP, mention
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 
-@bot.on(admin_cmd(pattern=r"tfx$", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"tfx$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"tfx (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"tfx (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

@@ -6,7 +6,7 @@ from telethon import events
 from telethon.tl import functions, types
 
 from ..utils import admin_cmd
-from . import BOTLOG, BOTLOG_CHATID, CMD_HELP, mention
+from . import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP
 
 global USERTRX_ON
 global trx_time
@@ -17,6 +17,8 @@ USERTRX_ON = {}
 trx_time = None
 last_trx_message = {}
 trx_start = {}
+
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 
 @bot.on(events.NewMessage(outgoing=True))
@@ -107,15 +109,15 @@ async def on_trx(event):
         msg = None
         if link and reason:
             message_to_reply = (
-                f"**{mention} Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n**"
+                f"**{DEFAULTUSER} Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n**"
             )
         elif reason:
             message_to_reply = (
-                f"`{mention} Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
+                f"`{DEFAULTUSER} Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
             )
         else:
             message_to_reply = (
-                f"`{mention} Sedang Transaksi`\n`Dari :` {endtime}\n`Ada apa? Sebentar ya?`"
+                f"`{DEFAULTUSER} Sedang Transaksi`\n`Dari :` {endtime}\n`Ada apa? Sebentar ya?`"
             )
         if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
             msg = await event.reply(message_to_reply)
@@ -168,19 +170,19 @@ async def _(event):
             trx_time = datetime.now()
         USERTRX_ON = f"on: {reason}"
         if reason:
-            await edit_delete(event, f"{mention} `Sedang Transaksi Dengan >` {reason}", 5)
+            await edit_delete(event, f"{DEFAULTUSER} `Sedang Transaksi Dengan >` {reason}", 5)
         else:
-            await edit_delete(event, f"{mention} `Sedang Transaksi!`", 5)
+            await edit_delete(event, f"{DEFAULTUSER} `Sedang Transaksi!`", 5)
         if BOTLOG:
             if reason:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"#TRANSAKSI \n{mention} `Sedang Transaksi Dengan >` {reason}",
+                    f"#TRANSAKSI \n{DEFAULTUSER} `Sedang Transaksi Dengan >` {reason}",
                 )
             else:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"#TRANSAKSI \n{mention} `Sedang Transaksi!`",
+                    f"#TRANSAKSI \n{DEFAULTUSER} `Sedang Transaksi!`",
                 )
 
 
