@@ -34,6 +34,7 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 11])
+        await event.delete(120)
 
 CMD_HELP.update(
     {
