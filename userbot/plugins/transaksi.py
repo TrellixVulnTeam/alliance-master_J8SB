@@ -109,7 +109,7 @@ async def on_trx(event):
             message_to_reply = (
                 f"**{name}**"
             )
-        elif reason:
+        elif name:
             message_to_reply = (
                 f"`{name}`"
             )
@@ -144,7 +144,7 @@ async def _(event):
     global last_trx_message
     global trx_start
     global trx_end
-    global reason
+    global name
     global link
     USERTRX_ON = {}
     trx_time = None
@@ -156,10 +156,10 @@ async def _(event):
         input_str = event.pattern_match.group(1)
         if ";" in input_str:
             msg, link = input_str.split(";", 1)
-            reason = f"[{msg.strip()}]({link.strip()})"
+            name = f"[{msg.strip()}]({link.strip()})"
             link = True
         else:
-            reason = input_str
+            name = input_str
             link = False
         last_seen_status = await event.client(
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
@@ -172,7 +172,7 @@ async def _(event):
         else:
             await edit_delete(event, f"{mention} `Sedang Transaksi!`", 5)
         if BOTLOG:
-            if reason:
+            if name:
                 await event.client.send_message(
                     BOTLOG_CHATID,
                     f"#TRANSAKSI \n{mention} `Sedang Transaksi Dengan >` {name}",
@@ -189,8 +189,8 @@ CMD_HELP.update(
         "trx": "__**PLUGIN NAME :** Trx__\
 \n\n📌** CMD ➥** `.trx` [Optional Reason]\
 \n**USAGE   ➥  **Sets you as trx.\nReplies to anyone who tags/PM's \
-you telling them that you are TRX(reason)\n\n__Switches off TRX when you type back anything, anywhere.__\
-\n\n**Note :** If you want TRX with hyperlink use [ ; ] after reason, then paste the media link.\
+you telling them that you are TRX(name)\n\n__Switches off TRX when you type back anything, anywhere.__\
+\n\n**Note :** If you want TRX with hyperlink use [ ; ] after name, then paste the media link.\
 \n**Example :** `.trx busy now ;<Media_link>`\
 \n\n📌** CMD ➥** `.untrx`\
 "
