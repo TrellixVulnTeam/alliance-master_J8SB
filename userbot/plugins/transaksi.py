@@ -20,8 +20,8 @@ trx_start = {}
 
 
 @bot.on(admin_cmd(pattern=r"untrx$", outgoing=True))
-async def _(event):
-    if event.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def set_not_afk(event):
+    if event.fwd_from:
         return
     global USERTRX_ON
     global trx_time
