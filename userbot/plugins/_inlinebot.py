@@ -21,11 +21,11 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         query = event.text
         hmm = re.compile("secret (.*) (.*)")
         match = re.findall(hmm, query)
-        if query.startswith("**Okiniobot") and event.query.user_id == bot.uid:
+        if query.startswith("**Alliancebot") and event.query.user_id == bot.uid:
             buttons = [
                 (
                     custom.Button.inline("Stats", data="stats"),
-                    Button.url("Whoami", "https://t.me/okinio"),
+                    Button.url("Whoami", "https://t.me/Allianceproject"),
                 )
             ]
             if CAT_IMG and CAT_IMG.endswith((".jpg", ".png")):
@@ -49,11 +49,11 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     buttons=buttons,
                 )
             await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("Okinio"):
+        elif event.query.user_id == bot.uid and query.startswith("Alliance"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Okinio Help",
+                "© Alliance Help",
                 text="{}\nPlugin yang dimuat saat ini: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
@@ -159,7 +159,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -176,7 +176,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.*)")))
@@ -192,7 +192,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
+                    reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceserver ya 🥰"
             except KeyError:
                 reply_pop_up_alert = "Pesan telah tidak ada di bot server"
         else:
@@ -235,7 +235,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi \n\nTanya ke @Allianceproject ya.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
@@ -243,7 +243,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("menu closed")
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi \n\nCheck channel @okinioserver ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceserver ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
