@@ -19,7 +19,7 @@ last_trx_message = {}
 trx_start = {}
 
 
-@bot.on(events.NewMessage(pattern=r".untrx", outgoing=True))
+@bot.on(events.NewMessage(outgoing=True))
 async def set_not_afk(event):
     if event.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
@@ -61,7 +61,7 @@ async def set_not_afk(event):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#TRXFALSE \n`Set TRX mode to False\n"
+                "#TRANSAKSI \n`Set TRX mode to False\n"
                 + "Transaksi Selesai!`",
             )
 
@@ -107,15 +107,15 @@ async def on_trx(event):
         msg = None
         if link and reason:
             message_to_reply = (
-                f"**Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?**"
+                f"**{mention} Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n**"
             )
         elif reason:
             message_to_reply = (
-                f"`Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
+                f"`{mention} Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
             )
         else:
             message_to_reply = (
-                f"`Sedang Transaksi`\n`Dari :` {endtime}\n`Dengan :` {reason}\n`Ada apa? Sebentar ya?`"
+                f"`{mention} Sedang Transaksi`\n`Dari :` {endtime}\n`Ada apa? Sebentar ya?`"
             )
         if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
             msg = await event.reply(message_to_reply)
