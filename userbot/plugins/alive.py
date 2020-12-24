@@ -7,7 +7,7 @@ from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import CMD_HELP, StartTime, catdef, catversion, hmention, mention, reply_id
 
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 UserBot [ACTIVE]"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "🧸 Alliancebot [ACTIVE]"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "-> "
 
 
@@ -33,7 +33,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Okiniobot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceserver><b>Channel</b></a> | <a href = https://t.me/allianceserverbot><b>Bot</b></a>"
+        cat_caption += "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/alliancepubgstore><b>Channel</b></a> | <a href = https://t.me/allianceserverbot><b>Bot</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             CAT_IMG,
@@ -54,7 +54,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} Okiniobot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceserver><b>Channel</b></a> | <a href = https://t.me/allianceserverbot><b>Bot</b></a>",
+            "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/alliancepubgstore><b>Channel</b></a> | <a href = https://t.me/allianceserverbot><b>Bot</b></a>",
             parse_mode="html",
         )
 

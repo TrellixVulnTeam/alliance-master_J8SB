@@ -18,7 +18,7 @@ async def cmd_list(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} plugins of okiniohelp\n\n"
+            "Total {count} commands found in {plugincount} plugins of Alliance\n\n"
         )
         catcount = 0
         plugincount = 0
@@ -41,7 +41,7 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**All commands of the okiniohelp can be seen [here]({url})**"
+            reply_text = f"**All commands of the Alliance can be seen [here]({url})**"
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))
@@ -63,7 +63,7 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Okinio Helper. Dibuat oleh {mention} untuk menampilkan semua plugin\
+            help_string = f"Alliancd Helper. Dibuat oleh {mention} untuk menampilkan semua plugin\
                           \nCheck `.help plugin name` Untuk perintah, jika popup tidak muncul.\
                           \nCheck `.info plugin name` untuk penggunaan plugins tersebut and commands"
             tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
@@ -88,7 +88,7 @@ async def cmd_list(event):
 async def info(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
-        string = "Total {count} commands found in {plugincount} sudo plugins of okiniohelp\n\n"
+        string = "Total {count} commands found in {plugincount} sudo plugins of Alliance\n\n"
         catcount = 0
         plugincount = 0
         for i in sorted(SUDO_LIST):
@@ -110,7 +110,7 @@ async def info(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"All commands untuk okiniohelp adalah [here]({url})"
+            reply_text = f"All commands untuk Alliance adalah [here]({url})"
             await event.reply(reply_text, link_preview=False)
             return
         await event.reply(
