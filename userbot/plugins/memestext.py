@@ -1,5 +1,5 @@
 """
-# Edited by @Jisan7509
+# Edited by @allianceproject
 custom cmds by @heyworld to make it look more gayish
 Thanks to @AbhinavShinde @Jisan7509 for strings
 Sing credits :by @PhycoNinja13b
@@ -23,7 +23,7 @@ from . import CMD_HELP, catmemes
 async def source(e):
     await edit_or_reply(
         e,
-        "PM [Okinio](https://t.me/okinio) untuk menanyakan link repo.",
+        "PM [Alliance-Project](https://t.me/allianceproject) untuk menanyakan link repo.",
     )
 
 
