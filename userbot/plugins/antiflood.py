@@ -42,7 +42,8 @@ async def _(event):
         )
         await asyncio.sleep(10)
         await no_admin_privilege_message.edit(
-            "Ini SPAM yang tidak berguna. Hentikan ini, nikmatilah obrolan ", link_preview=False
+            "Ini SPAM yang tidak berguna. Hentikan ini, nikmatilah obrolan ",
+            link_preview=False,
         )
     else:
         await event.client.send_message(

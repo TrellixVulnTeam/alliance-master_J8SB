@@ -133,12 +133,14 @@ async def show_welcome(event):
     if cws.f_mesg_id:
         msg_o = await bot.get_messages(entity=BOTLOG_CHATID, ids=int(cws.f_mesg_id))
         await edit_or_reply(
-            event, "`Saat ini saya mengundang pengguna baru dengan catatan selamat datang ini.`"
+            event,
+            "`Saat ini saya mengundang pengguna baru dengan catatan selamat datang ini.`",
         )
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws.reply:
         await edit_or_reply(
-            event, "`Saat ini saya mengundang pengguna baru dengan catatan selamat datang ini.`"
+            event,
+            "`Saat ini saya mengundang pengguna baru dengan catatan selamat datang ini.`",
         )
         await event.reply(cws.reply)
 

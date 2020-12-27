@@ -66,9 +66,7 @@ async def catgban(cat):
     except BaseException:
         pass
     if gban_sql.is_gbanned(user.id):
-        await cate.edit(
-            f"dia [user](tg://user?id={user.id}) sudah berada di list gban"
-        )
+        await cate.edit(f"dia [user](tg://user?id={user.id}) sudah berada di list gban")
     else:
         gban_sql.catgban(user.id, reason)
     san = []

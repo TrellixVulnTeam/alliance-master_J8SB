@@ -53,9 +53,7 @@ async def _(event):
     catevent = await edit_or_reply(event, "`Musik ditemukan, uploading....`")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await catevent.edit(
-            f"Tidak ditemukan `{query}`"
-        )
+        return await catevent.edit(f"Tidak ditemukan `{query}`")
     cmd = event.pattern_match.group(1)
     if cmd == "song":
         q = "128k"
@@ -81,9 +79,7 @@ async def _(event):
     #    return await catevent.edit(f"**Error :** `{stderr}`")
     song_file = Path(f"{catname}.mp3")
     if not os.path.exists(song_file):
-        return await catevent.edit(
-            f"Tidak ditemukan `{query}`"
-        )
+        return await catevent.edit(f"Tidak ditemukan `{query}`")
     await catevent.edit("`Musik ditemukan, upkoading..🥰`")
     catthumb = Path(f"{catname}.jpg")
     if not os.path.exists(catthumb):

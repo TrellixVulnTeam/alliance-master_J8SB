@@ -41,7 +41,9 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**All commands of the Alliancebot can be seen [here]({url})**"
+            reply_text = (
+                f"**All commands of the Alliancebot can be seen [here]({url})**"
+            )
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))

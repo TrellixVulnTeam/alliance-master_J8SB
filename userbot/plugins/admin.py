@@ -218,9 +218,7 @@ async def ban(bon):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await catevent.edit(
-            "`Error, Periksa lagi!`"
-        )
+        await catevent.edit("`Error, Periksa lagi!`")
         return
     if reason:
         await catevent.edit(f"`{str(user.id)}` Dia DiBanned !!\ngara-gara: {reason}")
@@ -288,9 +286,7 @@ async def startmute(event):
         replied_user = await event.client(GetFullUserRequest(userid))
         chat_id = event.chat_id
         if is_muted(userid, chat_id):
-            return await event.edit(
-                "Wah...Mute Dia Cok..!"
-            )
+            return await event.edit("Wah...Mute Dia Cok..!")
         try:
             mute(userid, chat_id)
         except Exception as e:
@@ -312,16 +308,12 @@ async def startmute(event):
         if user.id == bot.uid:
             return await edit_or_reply(event, "Begok, Mau Mute diri sendiri? Hadeh -_-")
         if is_muted(user.id, event.chat_id):
-            return await edit_or_reply(
-                event, "Dia Udah Di Mute Cok..!"
-            )
+            return await edit_or_reply(event, "Dia Udah Di Mute Cok..!")
         try:
             admin = chat.admin_rights
             creator = chat.creator
             if not admin and not creator:
-                await edit_or_reply(
-                    event, "`Kamu Siapa? Bukan Admin Disini.`#sadcok "
-                )
+                await edit_or_reply(event, "`Kamu Siapa? Bukan Admin Disini.`#sadcok ")
                 return
             result = await event.client(
                 functions.channels.GetParticipantRequest(
@@ -385,9 +377,7 @@ async def endmute(event):
         replied_user = await event.client(GetFullUserRequest(userid))
         chat_id = event.chat_id
         if not is_muted(userid, chat_id):
-            return await event.edit(
-                "__Dia Tidak Di Mute Cok..!__\n"
-            )
+            return await event.edit("__Dia Tidak Di Mute Cok..!__\n")
         try:
             unmute(userid, chat_id)
         except Exception as e:
@@ -495,7 +485,9 @@ async def pin(msg):
     to_unpin = msg.reply_to_msg_id
     options = (msg.pattern_match.group(1)).strip()
     if not to_unpin and options != "all":
-        await edit_delete(msg, "`Reply Pesan Untuk di unpin atau bisa juga .unpin all`", 5)
+        await edit_delete(
+            msg, "`Reply Pesan Untuk di unpin atau bisa juga .unpin all`", 5
+        )
         return
     if to_unpin and not options:
         try:
@@ -557,7 +549,9 @@ async def kick(usr):
             f"`Dikeluarkan Dari Grup` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await catevent.edit(f"`DiKeluarkan Dari Grup` [{user.first_name}](tg://user?id={user.id})`!`")
+        await catevent.edit(
+            f"`DiKeluarkan Dari Grup` [{user.first_name}](tg://user?id={user.id})`!`"
+        )
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
@@ -582,9 +576,7 @@ async def _(event):
             deleted_msg += "\nini yang dihapus ->`{}`".format(i.old.message)
         await edit_or_reply(event, deleted_msg)
     else:
-        await edit_or_reply(
-            event, "`Siapa Kamu? Bukan Admin Di sini`"
-        )
+        await edit_or_reply(event, "`Siapa Kamu? Bukan Admin Di sini`")
         await sleep(3)
         try:
             await event.delete()

@@ -31,7 +31,9 @@ async def _(event):
             await event.client.send_message(
                 BOTLOG_CHATID, "#SHUTDOWN \n" "Bot shut down"
             )
-        await edit_or_reply(event, "`Shutdown bot ...Nanti Kamu Harus Menghidupkannya Manual`")
+        await edit_or_reply(
+            event, "`Shutdown bot ...Nanti Kamu Harus Menghidupkannya Manual`"
+        )
         HEROKU_APP.process_formation()["userbot"].scale(0)
     else:
         await edit_or_reply(
@@ -54,7 +56,9 @@ async def _(event):
             BOTLOG_CHATID,
             "Kamu menentukan bot untuk tidur selama " + str(counter) + " detik",
         )
-    event = await edit_or_reply(event, f"`ok, aku akan tertidur selama {counter} detik`")
+    event = await edit_or_reply(
+        event, f"`ok, aku akan tertidur selama {counter} detik`"
+    )
     sleep(counter)
     await event.edit("`Aku Terbangun..`")
 

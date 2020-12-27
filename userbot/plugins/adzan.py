@@ -15,9 +15,7 @@ async def get_adzan(adzan):
     url = f"https://api.pray.zone/v2/times/today.json?city={LOKASI}"
     request = requests.get(url)
     if request.status_code != 200:
-        await edit_delete(
-            adzan, f"`Tidak dapat mengambil data kota {LOKASI}`", 5
-        )
+        await edit_delete(adzan, f"`Tidak dapat mengambil data kota {LOKASI}`", 5)
         return
     result = json.loads(request.text)
     catresult = f"<b>Jadwal Sholat </b>\

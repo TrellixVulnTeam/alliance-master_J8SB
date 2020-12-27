@@ -61,8 +61,7 @@ async def set_not_afk(event):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#AFKFALSE \n`Set AFK mode to False\n"
-                + "Aku Kembali!`",
+                "#AFKFALSE \n`Set AFK mode to False\n" + "Aku Kembali!`",
             )
 
 
@@ -106,17 +105,11 @@ async def on_afk(event):
     if USERAFK_ON and not (await event.get_sender()).bot:
         msg = None
         if link and reason:
-            message_to_reply = (
-                f"**{reason}**"
-            )
+            message_to_reply = f"**{reason}**"
         elif reason:
-            message_to_reply = (
-                f"`{reason}`"
-            )
+            message_to_reply = f"`{reason}`"
         else:
-            message_to_reply = (
-                f"`Sedang AFK\nDari :{endtime}\n\nAda apa?`"
-            )
+            message_to_reply = f"`Sedang AFK\nDari :{endtime}\n\nAda apa?`"
         if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
             msg = await event.reply(message_to_reply)
         if event.chat_id in last_afk_message:

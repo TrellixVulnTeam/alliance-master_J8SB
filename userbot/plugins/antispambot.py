@@ -72,9 +72,7 @@ if Config.ANTISPAMBOT_BAN:
                 LOGS.info(e)
                 data = None
             if data and data["ok"]:
-                reason = (
-                    f"[Terbanned oleh Combot Anti Spam](https://cas.chat/query?u={user.id})"
-                )
+                reason = f"[Terbanned oleh Combot Anti Spam](https://cas.chat/query?u={user.id})"
                 hmm = await event.reply(
                     f"[{user.first_name}](tg://user?id={user.id}) terbanned oleh Combat anti-spam service(CAS) Dengan alasan {reason}"
                 )
@@ -158,8 +156,10 @@ async def caschecker(cas):
                 else:
                     banned_users += f"Deleted Account `{user.id}`\n"
             members_count += 1
-        text = "Warning! Ditemukan `{}` of `{}` users yang terbanned spamwatch:\n".format(
-            cas_count, members_count
+        text = (
+            "Warning! Ditemukan `{}` of `{}` users yang terbanned spamwatch:\n".format(
+                cas_count, members_count
+            )
         )
         text += banned_users
         if not cas_count:
