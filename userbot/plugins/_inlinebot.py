@@ -159,7 +159,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @alliancepubgstore ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceofficial ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -176,7 +176,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @alliancepubgstore ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceofficial ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.*)")))
@@ -192,7 +192,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @alliancepubgstore ya 🥰"
+                    reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceofficial ya 🥰"
             except KeyError:
                 reply_pop_up_alert = "Pesan telah tidak ada di bot server"
         else:
@@ -235,7 +235,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi \n\nTanya ke @Allianceproject ya.."
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nTanya ke @Allianceproject ya.."
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
@@ -243,7 +243,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("menu closed")
         else:
-            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @alliancepubgstore ya 🥰"
+            reply_pop_up_alert = "Ini Menu Pribadi ku \n\nCheck channel @allianceofficial ya 🥰"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))

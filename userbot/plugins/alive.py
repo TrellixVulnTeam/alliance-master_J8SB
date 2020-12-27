@@ -30,10 +30,10 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
         )
         cat_caption += (
-            f"<b>{EMOJI} Okiniobot Version :</b> <code>{catversion}</code>\n"
+            f"<b>{EMOJI} Alliancebot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/alliancepubgstore><b>Channel</b></a> | <a href = https://t.me/allianceserverbot><b>Bot</b></a>"
+        cat_caption += "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceofficial><b>Channel</b></a> | <a href = https://t.me/alliancegivawaybot><b>Giveaway</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             CAT_IMG,
@@ -52,9 +52,9 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Uptime :</b> <code>{uptime}</code>\n"
             f"<b>{EMOJI} Python Version :</b> <code>{python_version()}</code>\n"
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
-            f"<b>{EMOJI} Okiniobot Version :</b> <code>{catversion}</code>\n"
+            f"<b>{EMOJI} Alliancebot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/alliancepubgstore><b>Channel</b></a> | <a href = https://t.me/allianceserverbot><b>Bot</b></a>",
+            "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceofficial><b>Channel</b></a> | <a href = https://t.me/alliancegiveawayboy><b>Giveaway</b></a>",
             parse_mode="html",
         )
 
