@@ -7,4 +7,4 @@ wget -q -O /app/bin/cmrudl https://raw.githubusercontent.com/yshalsager/cmrudl.p
 # changing bins permissions
 chmod 755 bin/megadown
 chmod 755 bin/cmrudl 
-echo "Succesfully bins are added"
+echo "Berhasil ditambahkan!"

@@ -1,23 +1,30 @@
 #!/bin/bash
 
-# Copyright (C) 2020 by sandy1709
+# Copyright (C) 2020
 
 echo "
-                 ____  __ __ _____   __________ 
-                / __ \/ //_//  _/ | / /  _/ __ \ 
-               / / / / ,<   / //  |/ // // / / /
-              / /_/ / /| |_/ // /|  // // /_/ / 
-              \____/_/ |_/___/_/ |_/___/\____/ \n\n"
+
+
+
+            ____  __ __ _____   __________ 
+           / __ \/ //_//  _/ | / /  _/ __ \ 
+          / / / / ,<   / //  |/ // // / / /
+         / /_/ / /| |_/ // /|  // // /_/ / 
+         \____/_/ |_/___/_/ |_/___/\____/
+
+
+
+"
 
 FILE=/app/.git
 
 if [ -d "$FILE" ] ; then
-    echo "$FILE directory exists already."
+    echo "$FILE direktory sudah ada."
 else
     rm -rf userbot
     rm -rf .github
     rm -rf requirements.txt
-    git clone https://github.com/allianceprojects/catuserbot cat_ub
+    git clone https://github.com/allianceprojects/alliance-master cat_ub
     mv cat_ub/userbot .
     mv cat_ub/.github . 
     mv cat_ub/.git .
@@ -28,7 +35,7 @@ fi
 
 FILE=/app/bin/
 if [ -d "$FILE" ] ; then
-    echo "$FILE directory exists already."
+    echo "$FILE direktory sudah ada."
 else
     bash ./.github/bins.sh
 fi
