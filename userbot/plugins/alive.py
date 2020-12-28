@@ -54,7 +54,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Telethon version :</b> <code>{version.__version__}</code>\n"
             f"<b>{EMOJI} Alliancebot Version :</b> <code>{catversion}</code>\n"
             f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-            "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceofficial><b>Channel</b></a> | <a href = https://t.me/alliancegiveawayboy><b>Giveaway</b></a>",
+            "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceofficial><b>Channel</b></a> | <a href = https://t.me/alliancegiveawaybot><b>Giveaway</b></a>",
             parse_mode="html",
         )
 
