@@ -33,7 +33,7 @@ async def amireallyalive(alive):
             f"<b>{EMOJI} Alliancebot Version :</b> <code>{catversion}</code>\n"
         )
         cat_caption += f"<b>{EMOJI} Database :</b> <code>{check_sgnirts}</code>\n\n"
-        cat_caption += "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceofficial><b>Channel</b></a> | <a href = https://t.me/alliancegivawaybot><b>Giveaway</b></a>"
+        cat_caption += "    <a href = https://t.me/Allianceproject><b>Message</b></a> | <a href = https://t.me/allianceofficial><b>Channel</b></a> | <a href = https://t.me/alliancegiveawaybot><b>Giveaway</b></a>"
         await alive.client.send_file(
             alive.chat_id,
             CAT_IMG,
